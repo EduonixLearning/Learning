@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Le styles -->
+<link href="dist/css/bootstrap.css" rel="stylesheet">
+
+<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+</head>
+<body>
+<div class="container">
+
+<ul class="nav nav-tabs">
+  <li role="presentation"><a href="dashboard.html">Dashboard</a></li>
+  <li role="presentation"><a href="home.html">Home</a></li>
+  <li role="presentation"><a href="courses.html">Courses</a></li>
+  <li role="presentation"class="active "><a href="#">Freebies</a></li>
+</ul>
+<div id="placeholder">
+
+
+   <!-- <div id="placeholder"></div>-->
+    
+    <script>
+  $.getJSON('http://eduonix.org/rony/images.json', function(data) {
+       // var output="<div class='thumbnail col-md-4 col-sm-4 col-xs-4'>";
+	    var output="<div class='row'>";
+	   
+        for (var i in data.users) {
+            output+="<div class='col-md-2 col-sm-4 col-xs-4'> <a href="+ data.users[i].joined.link +" class='thumbnail'><img class='img-rounded' src="+ data.users[i].joined.urle +">" +data.users[i].firstName+"</a></div>";
+			
+	  }
+	
+        output+="</div>";
+        document.getElementById("placeholder").innerHTML=output;
+  });
+    </script>
+	</div>
+</div>
+</div>
+</body>
+</html>

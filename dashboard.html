@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Le styles -->
+<link href="dist/css/bootstrap.css" rel="stylesheet">
+
+<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active "><a href="#">Dashboard</a></li>
+  <li role="presentation" ><a href="home.html">Home</a></li>
+  <li role="presentation"><a href="courses.html">Courses</a></li>
+  <li role="presentation"><a href="freebies.html">Freebies</a></li>
+</ul>
+<div id="placeholder">
+
+
+   <!-- <div id="placeholder"></div>-->
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+  $.getJSON('http://eduonix.org/rony/user.json', function(data) {
+        var output="<ul>";
+        for (var i in data.users) {
+            output+="<h1>"+"Welcome"+" "+data.users[i].firstName + "</h1>";
+			
+	  }
+	
+        output+="</ul>";
+        document.getElementById("placeholder").innerHTML=output;
+  });
+    </script>
+	</div>
+</div>
+</body>
+</html>
